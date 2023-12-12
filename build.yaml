@@ -13,4 +13,4 @@
 #
 ---
 board: [ "nice_nano_v2" ]
-shield: ['sodium62_left','sodium62_right', 'settings_reset']
+shield: ['splitreus62_left','splitreus62_right', 'settings_reset']
