@@ -1,9 +1,27 @@
-on: 
+name: zmk-build-and-release
+
+on:
   push:
-    paths-ignore:
-      - '.github/**'
+    paths:
+      - '.github/workflows/build.yml'
+      - 'boards/**'
+      - 'config/**'
+      - 'zephyr/**'
+      - 'build.yaml'
+    branches: [ "main" ]
   pull_request:
+    paths:
+      - '.github/workflows/build.yml'
+      - 'boards/**'
+      - 'config/**'
+      - 'zephyr/**'
+      - 'build.yaml'
+    branches: [ "main" ]
   workflow_dispatch:
+
 jobs:
   build:
-    uses: ./.github/workflows/build-user-config.yml
+    permissions:
+      contents: read
+
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
